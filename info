@@ -1,0 +1,2 @@
+
+--ALTER TABLE tbl_Country DROP COLUMN IsDeleted; // eliminar columna
