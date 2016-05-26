@@ -1,44 +1,26 @@
 <?php
 
-//echo 'desde controlador empleado';
-
-
 if (isset($_GET['func'])) {
-    
 
-
-//$datosLateral =$sideBar->empleados();
-
-
-//require 'templates/controlPanel/components/navaside.php';
-    
     switch ($_GET['func']) {
 
-        case 'crear':
-            $campos = vistaCrearEmpleado('nuevo');
-            //$valores = null;
-            echo require(TEMPLATES . 'controlPanel/components/form.php');
-            break;
-        case 'ver':
-            $tabla = vistaTabular('verProducto');
-            $titulo = 'Lista de empleados';
+        case 'viewNuevaMarca':
+            $view = new ProductoView();
+            $ciudad = $view->vistaSelects('ciudad');
+            
+            $boton =['createUpdateBrand','crearActualizarMarca()'];
+            $titulo ='Crear una Nueva Marca';
+            $selects = $ciudad;
+            $selects .= '';
+            
+            $campos = $view->vistaCamposMarca('nuevo');
 
-            echo require(TEMPLATES . 'controlPanel/components/table.php');
-            break;
-        case 'cargo':
-            $tabla = vistaTabular('verCargos');
-            $titulo = 'Lista de empleados';
-            echo require(TEMPLATES . 'controlPanel/components/table.php');
-            break;
-        case 'viewAsignarCargo':
-            $lista = viewAsignarCargo();
-            //$titulo = 'Lista de empleados';
-            echo require(TEMPLATES . 'controlPanel/components/formReasignar.php');
+            echo require(TEMPLATES . 'controlPanel/components/forms/formProducto.php');
             break;
         case 'sideBar':
             //echo 1;
             $sideBar = new SideBar();
-            echo json_encode($sideBar->empleados());
+            echo json_encode($sideBar->productos());
             break;
 
         default :
@@ -48,74 +30,39 @@ if (isset($_GET['func'])) {
 } elseif (isset($_GET['mode'])) {
     switch ($_GET['mode']) {
 
-        case 'viewActualizar':
-            $idActualizar = $_POST['id'];
-            $campos = vistaCrearEmpleado('actualizar');
-            $valores = vistaEditarEmpleado($_POST['id']);
-            echo require(TEMPLATES . 'controlPanel/components/form.php');
-            break;
-        case 'nuevo':
-            $datos = array(
-                $_POST['id'],
-                strtoupper($_POST['nombre']),
-                strtoupper($_POST['direccion']),
-                $_POST['telefono'],
-                $_POST['fecha'],
-                $_POST['sueldo'],
-            );
+        case 'buscarUnEmpleado':
+            //$datos = $_POST['id'];
+            $res= new UnEmpleadoView();
+            $titulo ='Empleado';
+            $tabla= $res->vistaTabular('buscarUnEmpleado');
 
-            $db = new Empleado();
-            if ($db->nuevoEmpleado($datos)) {
-                echo 1;
-            } else {
-                echo $db->errno . ' ' . $db->error;
-            }
-            $db->close();
-            //$campos= vistaCrearEmpleado();
-            //echo require(TEMPLATES . 'controlPanel/components/form.php');
+            echo require(TEMPLATES . 'controlPanel/components/table.php');
             break;
-        case 'actualizar':
-            $datos = [
-                $_POST['idActualizar'],
-                strtoupper($_POST['nombre']),
-                strtoupper($_POST['direccion']),
-                $_POST['telefono'],
-                $_POST['fecha'],
-                $_POST['sueldo'],
-                $_POST['id']
-            ];
+        case 'cargosTodos':
+            //$datos = $_POST['id'];
+            $res= new UnEmpleadoView();
+            $titulo ='Cargos Desempeñados';
+            $tabla= $res->vistaTabular('cargosTodos');
 
-            $db = new Empleado();
-            if ($db->actualizarEmpleado($datos)) {
-                echo 1;
-            } else {
-                echo $db->errno . ' ' . $db->error;
-                //echo 0;
-            }
-            $db->close();
+            echo require(TEMPLATES . 'controlPanel/components/table.php');
+            break;
+        case 'horasTrabajadas':
+            //$datos = $_POST['id'];
+            $res= new UnEmpleadoView();
+            $titulo ='Horas trabajadas';
+            $tabla= $res->vistaTabular('horasTrabajadas');
 
+            echo require(TEMPLATES . 'controlPanel/components/table.php');
             break;
-        case 'viewAsignarCargo':
-            $lista = viewAsignarCargo();
-            echo require(TEMPLATES . 'controlPanel/components/formReasignar.php');
-            break;
-        case 'asignarCargo':
-            $db = new Empleado();
-            if ($db->asignarCargo()) {
-                echo 1;
-            } else {
-                echo $db->errno . ' ' . $db->error;
-            }
+        case 'bitacora':
+            //$datos = $_POST['id'];
+            $res= new UnEmpleadoView();
+            $titulo ='Horas trabajadas';
             
-            break;
-        case 'ver':
-            //$tabla= vistaVerEmpleados();
-            //$titulo ='Lista de empleados';
-            //echo require(TEMPLATES . 'controlPanel/components/table.php');
-            break;
-        case 'eliminar':
-            //$campos= vistaEliminarEmpleados();
-            //echo require(TEMPLATES . 'controlPanel/components/form.php');
+            $tabla = $res->vistaTabular('tiempoTotalOnLine');
+            $tabla2 = $res->vistaTabular('bitacora');
+
+            echo require(TEMPLATES . 'controlPanel/components/table.php');
             break;
 
         default :

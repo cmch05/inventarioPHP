@@ -33,6 +33,7 @@ function vistaTabular($direccion) {
         $sql = $db->verEmplados();
         $accion = '<td id="update"><a href="#" onclick="vistaActualizarEmpleados(this)" >Actualizar</a></td>';
         $accion .='<td  id="delete"><a href="#">Eliminar</a></td>';
+        $accion .='<td  id="unEmpleado"><a href="#" onclick="buscarUnEmpleado(this)">Detalles</a></td>';
     } elseif ($direccion == 'verCargos') {
         $sql = $db->cargoEmpleados();
 
@@ -45,7 +46,7 @@ function vistaTabular($direccion) {
     for ($index = 0; $index < count($titulo); $index++) {
         $res .= '<th>' . $titulo[$index] . '</th>';
     }
-    $res .='<td colspan="2" id="accion">Acción</td> </tr></thead><tbody>';
+    $res .='<td colspan="3" id="accion">Acción</td> </tr></thead><tbody>';
 
     while ($row = $db->recorrer($sql)) {
         //$res .='<tr id="'.$row[0].'">';

@@ -54,11 +54,10 @@ if (isset($_GET['func'])) {
             //$datos = $_POST['id'];
             $res= new UnEmpleadoView();
             $titulo ='Horas trabajadas';
-            $tabla ='<div class="row"><div class="col-md-4">';
-            $tabla .= $res->vistaTabular('tiempoTotalOnLine');
-            $tabla .='</div></div><div class="row"><div class="col-md-12">';
-            $tabla .= $res->vistaTabular('bitacora');
-            $tabla .= '</div></div>';
+            
+            $tabla = $res->vistaTabular('tiempoTotalOnLine');
+            $tabla2 = $res->vistaTabular('bitacora');
+
             echo require(TEMPLATES . 'controlPanel/components/table.php');
             break;
 

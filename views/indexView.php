@@ -8,7 +8,7 @@
 
 //$sideBarContent= require 'templates/controlPanel/components/navaside.php';
 $indexUsuario='<div class="jumbotron">
-    <h2>Formulario</h2>
+    <h2>Contenido del index</h2>
     <p>
        
 

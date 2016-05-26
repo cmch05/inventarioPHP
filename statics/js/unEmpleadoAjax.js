@@ -11,10 +11,23 @@ function viewBuscarUnEmpeado() {
     ajaxBase(cont);
 }
 //buscarUnEmpleado();
-function buscarUnEmpleado() {
+function buscarUnEmpleado(event) {
+    var id;
+    if(event != null){
+    event = event || window.event; // IE
+     id = event.parentNode.parentNode.firstChild.innerHTML;
+        //alert('desde evento');
+    
+    }
+    else{
+     id = __('txtId').value;
+       // alert('sin  evento');
+        
+    }
+    
+    
     dropContent();
     //alert('buscando');
-    var id = __('txtId').value;
     actualizarSideBar('unempleado', 'sideBar');//cambiar la sidebar
     //alert('probando');
     var form = 'id=' + id;

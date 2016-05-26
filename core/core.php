@@ -16,12 +16,14 @@ require'models/Conexion.php';
 require 'models/empleadoModel.php';
 require 'models/unEmpleadoModel.php';
 require 'models/loginModel.php';
+require 'models/productoModel.php';
 
 
 #vistas
 require 'views/empleadoView.php';
 require 'views/sideBarView.php';
 require 'views/unEmpleadoView.php';
+require 'views/productoView.php';
 //require 'views/indexView.php';
 
 #templates

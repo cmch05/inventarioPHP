@@ -1,8 +1,17 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+class ProductoModel extends Conexion{
+    
+    public function cidudad(){          
+        $res = $this->query("select codigo value , nombre content from ciudad "  );
+        return $res; //return false or true
+    }
+    public function departamento(){          
+        $res = $this->query("select codigo value , nombre content from departamento "  );
+        return $res; //return false or true
+    }
+    public function marca(){          
+        $res = $this->query("select codigo value , nombre content from departamento "  );
+        return $res; //return false or true
+    }
+}

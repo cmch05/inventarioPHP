@@ -5,7 +5,7 @@ class UnEmpleadoView {
     public function crearView() {
         $res = array(
             array('Identificacion', 'txtId', 'number'),
-            'buscarUnEmpleado()',
+            'buscarUnEmpleado(null)',
             ''
         );
         return $res;

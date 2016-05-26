@@ -32,6 +32,7 @@ if ($_POST) {
             case 'producto':
                 //echo 'llego al login';
                 //require('core/bin/ajax/goreg.php');
+                require CONTROLLER.'productoController.php';
                 break;
             case 'logout':
                 //echo 1;

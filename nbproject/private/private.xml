@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/inventarioPHP/statics/js/loginAjax.js</file>
-            <file>file:/var/www/html/inventarioPHP/controllers/unempleadoController.php</file>
-            <file>file:/var/www/html/inventarioPHP/templates/login/form.php</file>
-            <file>file:/var/www/html/inventarioPHP/views/unEmpleadoView.php</file>
-            <file>file:/var/www/html/inventarioPHP/statics/js/unEmpleadoAjax.js</file>
+            <file>file:/var/www/html/inventarioPHP/templates/controlPanel/components/forms/formProducto.php</file>
+            <file>file:/var/www/html/inventarioPHP/controllers/productoController.php</file>
+            <file>file:/var/www/html/inventarioPHP/models/productoModel.php</file>
+            <file>file:/var/www/html/inventarioPHP/views/productoView.php</file>
         </group>
     </open-files>
 </project-private>
