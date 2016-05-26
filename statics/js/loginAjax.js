@@ -29,6 +29,19 @@ function goLogOut(){
 }
 
 
+/*
+
+  window.onbeforeunload = confirmExit;
+  function confirmExit()
+  {
+    return "Ha intentado salir de esta pagina. Si ha realizado algun cambio en los campos sin hacer clic en el boton Guardar, los cambios se perderan. Seguro que desea salir de esta pagina? ";
+  }
+
+
+*/
+
+
+
 
 function ajaxBaseLogin(cont) {//ojo terminar la vista   
     var connect;   

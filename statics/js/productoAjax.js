@@ -1,3 +1,5 @@
+
+/*
 function ajaxBase(cont) {//ojo terminar la vista   
     var connect;   
     // cont[0] = metodo
@@ -8,7 +10,7 @@ function ajaxBase(cont) {//ojo terminar la vista
                 __(cont[3]).innerHTML = connect.responseText; 
         } else if (connect.readyState != 4) {
            
-            __('_AJAX_CONTENT_').innerHTML = respuesta(cont[4][0], cont[4][1],cont[4][2]);
+            __('_AJAX_ALERT_').innerHTML = respuesta(cont[4][0], cont[4][1],cont[4][2]);
         }
     }
     if (cont[0]==='POST') {
@@ -20,6 +22,7 @@ function ajaxBase(cont) {//ojo terminar la vista
         connect.send(); 
     }
 }
+*/
 
 
 function prueba(){

@@ -88,11 +88,11 @@ class SideBar{
         //$res['onclick'][]='';
         $res['onclick'][]='vistaVerEmpleados()';
         $res['onclick'][]='viewBuscarEmpleado()';
-        $res['onclick'][]='viewCargoEmpleado()';
+        $res['onclick'][]='cargosDesempeñados()';
         $res['onclick'][]='viewAsignarCargo()';
+        $res['onclick'][]='horasTrabajadas()';
         $res['onclick'][]='vistaCrearEmpleado()';
-        $res['onclick'][]='vistaCrearEmpleado()';
-        $res['onclick'][]='vistaCrearEmpleado()';
+        $res['onclick'][]='bitacora()';
         return $res;
     }
     

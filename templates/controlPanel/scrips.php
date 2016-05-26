@@ -16,6 +16,13 @@
 <!-- Menu Toggle Script -->
 <script>
 
+$(document).ready(function() {
+    // show the alert
+    setTimeout(function() {
+        $(".alert").alert('close');
+    }, 2000);
+});
+
 
 // ocultar antes de imprimir y luego de imprimir mostrar
     /*

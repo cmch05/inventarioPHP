@@ -9,7 +9,7 @@
                 <div class="container-fluid">
                     <?php //require('navbar.php'); ?>
                     <?php //require('alert.php'); ?>
-
+<?php //echo $_SESSION['salida']; ?>
                     <!-- <div class="row"><div class="col-md-12"> -->
                     <div class="row">
                         <div class="col-md-6 col-md-offset-2">
