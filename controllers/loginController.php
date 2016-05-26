@@ -14,21 +14,25 @@ if (!isset($_SESSION['app_id'])) {
 
 
         //$sql = $db->query("select id_usuario from usuario where (id_usuario='$data' or email='$data') and pass='$pass' limit 1");
-        $sql = $db->query("select id_usuario from usuario where id_usuario='$data' and password='$pass' limit 1");
-        echo "select id_usuario from usuario where id_usuario='$data'  and password='$pass' limit 1";
+        $sql = $db->query("select  id, id_usuario  from empleado where id_usuario='$data' and password='$pass' limit 1");
+        //echo "select id_usuario from usuario where id_usuario='$data'  and password='$pass' limit 1";
         if ($db->rows($sql) > 0) {
             require CONTROLLER . 'indexController.php';
             // if ($_POST['sesion']) {// esto es para guardar la sesion arreglar despues
             //ini_set('session.cookie_lifetime', time() + (60 * 60 * 24));
             ini_set('session.cookie_lifetime', time() + (30));
             // }
-            $_SESSION['app_id'] = $db->recorrer($sql)[0]; // se crea la sesion con el id del usuario
+            $datos =$db->recorrer($sql);
+            $_SESSION['app_id'] = $datos[0]; // se crea la sesion con el id del usuario
+            
+            $sql2 = $db->query("insert into bitacora_acceso(empleado) values('$datos[0]')");
+            
             //require 'views/indexView.php';
             //echo 1;
-        
             $db->liberar($sql);
+            $db->liberar($sql2);
         } else {
-            echo 0 ;
+            echo 0;
         }
         $db->close();
     }

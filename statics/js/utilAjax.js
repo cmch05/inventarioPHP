@@ -1,6 +1,6 @@
 // util
 function respuesta(tipo, mensaje1, mensaje2) {
-    result = '<div class= "alert alert-dismissible alert-' + tipo + '">';
+    result = '<div class= "alert alert-dismissible alert-' + tipo + ' role="alert">';
     result += '<button type="button" class="close" data-dismiss="alert">X</button>';
     result += '<h4>' + mensaje1 + '</h4>';
     result += '<p><strong>' + mensaje2 + '</strong></p>';
@@ -16,6 +16,17 @@ function dropContent() {
     while (__('contenido').firstChild) {
         __('contenido').removeChild(__('contenido').firstChild);
     }
+    while (__('_AJAX_RES_').firstChild) {
+        __('_AJAX_RES_').removeChild(__('_AJAX_RES_').firstChild);
+    }
+    
+}
+function dropAlert() {
+
+    while (__('_AJAX_ALERT_').firstChild) {
+        __('_AJAX_ALERT_').removeChild(__('_AJAX_ALERT_').firstChild);
+    }
+    
 }
 // toggle y print
 
@@ -30,6 +41,14 @@ $("#imprimir").click(function (e) {
     window.print();
     $("#wrapper").toggleClass("toggled");
 });
+
+window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove(); 
+    });
+}, 4000);
+
+
 
 //scrips sidebar
 
@@ -80,10 +99,11 @@ function ajaxBase(cont) {//ojo terminar la vista
     connect.onreadystatechange = function () {
         if (connect.readyState == 4 && connect.status == 200) {
           
+                dropAlert();
                 __(cont[3]).innerHTML = connect.responseText; 
         } else if (connect.readyState != 4) {
            
-            __('_AJAX_CONTENT_').innerHTML = respuesta(cont[4][0], cont[4][1],cont[4][2]);
+            __('_AJAX_ALERT_').innerHTML = respuesta(cont[4][0], cont[4][1],cont[4][2]);
         }
     }
     if (cont[0]==='POST') {
