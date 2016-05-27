@@ -6,17 +6,17 @@
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Facturación<strong class="caret"></strong></a>
     <ul class="dropdown-menu">
         <li>
-            <a href="#">Action</a>
+            <a href="#"onclick="viewNuevaFactura()">Crear Factura</a>
         </li>
         <li>
-            <a href="#">Another action</a>
+            <a href="#" onclick="viewVerFactura()">Ver Facturas</a>
         </li>
         <li>
-            <a href="#">Something else here</a>
+            <a href="#">Buscar Factura</a>
         </li>
         <li class="divider"></li>
         <li>
-            <a href="#">Separated link</a>
+            <a href="#">otro link</a>
         </li>
     </ul>
 </li>

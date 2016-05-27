@@ -7,7 +7,7 @@
             <?php require('components/navaside.php'); ?>
             <div id="page-content-wrapper">
                 <div class="container-fluid">
-                    <?php// echo $_SESSION['app_id']; ?>
+                    <?php //echo $_SESSION['app_id']; ?>
                     <?php require('navbar.php'); ?>
                     <?php //require('alert.php'); ?>
 

@@ -24,6 +24,7 @@ require 'views/empleadoView.php';
 require 'views/sideBarView.php';
 require 'views/unEmpleadoView.php';
 require 'views/productoView.php';
+require 'views/facturaView.php';
 //require 'views/indexView.php';
 
 #templates

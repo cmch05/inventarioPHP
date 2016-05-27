@@ -3,13 +3,20 @@
 }
 
 @media print{
-      #sidebar-wrapper,#accion,#update,#delete{
+      #sidebar-wrapper,#accion,#update,#delete, #unEmpleado ,.btn, #actualizar, #eliminar{
             
             display: none !important;
         }
+        .table{
+            display: block !important; 
+        }
         
-
-
+}
+@page{
+    
+}
+@media(min-width: 900px){
+    
 }
 /*
 @media print{

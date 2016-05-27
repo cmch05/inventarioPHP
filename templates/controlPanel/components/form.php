@@ -10,7 +10,15 @@
 
                     echo '<label for="' . $campos[$i][1] . '">';
                     echo $campos[$i][0] . ' </label>';
+                    
+                    if($i==0 && isset($accion)){
+                    echo' <input readonly type="' . $campos[$i][2] . '" class="form-control"id="' . $campos[$i][1];
+                    }
+                    else{
                     echo' <input type="' . $campos[$i][2] . '" class="form-control"id="' . $campos[$i][1];
+                        
+                    }
+                    
                     echo isset($valores)? '" value="' . $valores[$i].'"' :'';
                     echo '"  /> </div>';
                  

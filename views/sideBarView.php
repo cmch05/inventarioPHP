@@ -50,19 +50,19 @@ class SideBar{
         
         $res['value'] = array();
         //$res['value'][]='Empleados';
-        $res['value'][]='Ver Empleados';
-        $res['value'][]='Buscar Empleados';
-        $res['value'][]='Cargo Empleado';
-        $res['value'][]='Asignar Cargo';
-        $res['value'][]='Crear Empleado';
+        $res['value'][]='Ver Productos';
+        $res['value'][]='Ver Marcas';
+        $res['value'][]='Modificar Producto';
+        $res['value'][]='Nuevo Producto';
+        $res['value'][]='Nueva Marca';
         
         $res['onclick']=array();
         //$res['onclick'][]='';
-        $res['onclick'][]='vistaVerEmpleados()';
-        $res['onclick'][]='viewBuscarEmpleado()';
-        $res['onclick'][]='viewCargoEmpleado()';
-        $res['onclick'][]='viewAsignarCargo()';
-        $res['onclick'][]='vistaCrearEmpleado()';
+        $res['onclick'][]='viewVerProductos()';
+        $res['onclick'][]='viewVerMarcas()';
+        $res['onclick'][]='viewModificarProducto()';
+        $res['onclick'][]='viewNuevoProducto()';
+        $res['onclick'][]='viewNuevaMarca()';
         
  
         //header('Content-type: application/json; charset=utf-8');

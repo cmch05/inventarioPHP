@@ -3,6 +3,7 @@
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos<strong class="caret"></strong></a>
     <ul class="dropdown-menu">
         <li><a href="#" onclick="viewVerProductos()">Ver Productos</a></li>
+        <li><a href="#" onclick="viewVerMarcas()">Ver Marcas</a></li>
         <li><a href="#" onclick="viewModificarProducto()">Modificar Producto</a></li>
         
         

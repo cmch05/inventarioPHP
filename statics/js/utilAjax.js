@@ -99,7 +99,7 @@ function ajaxBase(cont) {//ojo terminar la vista
     connect.onreadystatechange = function () {
         if (connect.readyState == 4 && connect.status == 200) {
           
-                dropAlert();
+                 dropAlert();
                 __(cont[3]).innerHTML = connect.responseText; 
         } else if (connect.readyState != 4) {
            

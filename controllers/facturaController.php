@@ -4,19 +4,21 @@ if (isset($_GET['func'])) {
 
     switch ($_GET['func']) {
 
-        case 'viewNuevaMarca':
-            $view = new ProductoView();
-            $ciudad = $view->vistaSelects('ciudad');
+        case 'viewNuevaFactura':
+            $view = new FacturaView();
+            //$ciudad = $view->vistaSelects('ciudad');
 
             $boton = ['crear', 'crearActualizarMarca()'];
             $titulo = 'Crear una Nueva Marca';
-            $selects = $ciudad;
-            $selects .= '';
+            //$selects = $ciudad;
+            //$selects .= '';
 
-            $campos = $view->vistaCamposMarca('nuevo');
+            $campos = $view->viewNuevaFactura();
             
             echo require(TEMPLATES . 'controlPanel/components/forms/formProducto.php');
             break;
+        
+        
         case 'viewNuevoProducto':
             $view = new ProductoView();
             $marca = $view->vistaSelects('marca');

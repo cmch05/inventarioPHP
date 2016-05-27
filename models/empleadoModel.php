@@ -8,8 +8,11 @@ class Empleado extends Conexion {
 
         $nombre = $this->real_escape_string($datos[1]);
         $id = $this->real_escape_string($datos[0]);
+        // el nombre de usuario y la contraseña por defecto sera la identificacion
         $res = $this->query("insert into empleado values('$id','$nombre','$datos[2]',"
-                . "'$datos[3]','$datos[4]','$datos[5]', 1)");
+                . "'$datos[3]','$datos[4]','$datos[5]', 1,'$id', '$id' )");
+        
+        $res2= $this->query("insert into cargo_empleado(id_empleado, estado) values('$id',1)");
 
         unset($datos);
         //$db->close();
@@ -17,21 +20,21 @@ class Empleado extends Conexion {
     }
 
     public function verEmplados() {
-        $query = $this->query("select  empleado.id id , empleado.nombre nombre, 
-            direccion direccion, telefono telefono, empleado.fecha_ingreso as'fecha de ingreso',
-            cargo.nombre Cargo, empleado.sueldo
-            from empleado, cargo_empleado, cargo where
-            empleado.id=cargo_empleado.id_empleado and cargo_empleado.codigo_cargo = 
-            cargo.codigo and cargo_empleado.estado=1;");
+        $query = $this->query("select  distinct empleado.id id , empleado.nombre nombre, 
+direccion direccion, telefono telefono, empleado.fecha_ingreso as'fecha de ingreso',
+cargo.nombre Cargo, empleado.sueldo
+from empleado inner join  cargo_empleado on empleado.id=cargo_empleado.id_empleado
+inner join cargo on cargo_empleado.codigo_cargo = cargo.codigo  where empleado.estado=1  and
+cargo_empleado.serial =(select  max(serial) as 'ultimo' from cargo_empleado where id_empleado=empleado.id )");
         return $query;
     }
      public function verEmpladosInactivos() {
-        $query = $this->query("select  empleado.id id , empleado.nombre nombre, 
-            direccion direccion, telefono telefono, empleado.fecha_ingreso as'fecha de ingreso',
-            cargo.nombre Cargo, empleado.sueldo
-            from empleado, cargo_empleado, cargo where
-            empleado.id=cargo_empleado.id_empleado and cargo_empleado.codigo_cargo = 
-            cargo.codigo and cargo_empleado.estado=1;");
+        $query = $this->query("select  distinct empleado.id id , empleado.nombre nombre, 
+direccion direccion, telefono telefono, empleado.fecha_ingreso as'fecha de ingreso',
+cargo.nombre Cargo, empleado.sueldo
+from empleado inner join  cargo_empleado on empleado.id=cargo_empleado.id_empleado
+inner join cargo on cargo_empleado.codigo_cargo = cargo.codigo  where empleado.estado=1  and
+cargo_empleado.serial =(select  max(serial) as 'ultimo' from cargo_empleado where id_empleado=empleado.id )");
         return $query;
     }
 

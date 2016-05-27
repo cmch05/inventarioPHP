@@ -120,7 +120,7 @@ function vistaActualizarEmpleados(event) {
     var padre = event.parentNode.parentNode.firstChild.innerHTML;
     if (padre != '') {
         //alert('vas a actualizar un  empleado '+padre);
-        form = 'id=' + padre; // tabien se puede enviar en formato json
+        var form = 'id=' + padre; // tabien se puede enviar en formato json
         connect = window.XMLHttpRequest ? new XMLHttpRequest() : ActiveXObject('Microsoft.XMLHTTP'); //tipos de ajax uno para todos
         connect.onreadystatechange = function () {
             if (connect.readyState == 4 && connect.status == 200) {

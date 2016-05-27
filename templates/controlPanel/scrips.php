@@ -14,6 +14,7 @@
 <script src="statics/js/unEmpleadoAjax.js"></script>
 <script src="statics/js/loginAjax.js"></script>
 <script src="statics/js/proveedorAjax.js"></script>
+<script src="statics/js/facturaAjax.js"></script>
 <!-- Menu Toggle Script -->
 <script>
 

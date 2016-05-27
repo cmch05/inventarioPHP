@@ -55,6 +55,7 @@ if (isset($_GET['func'])) {
             $idActualizar = $_POST['id'];
             $campos = vistaCrearEmpleado('actualizar');
             $valores = vistaEditarEmpleado($_POST['id']);
+            $accion = 'actualizar';
             echo require(TEMPLATES . 'controlPanel/components/form.php');
             break;
         case 'nuevo':
