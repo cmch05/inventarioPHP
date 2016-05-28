@@ -17,6 +17,7 @@ require 'models/empleadoModel.php';
 require 'models/unEmpleadoModel.php';
 require 'models/loginModel.php';
 require 'models/productoModel.php';
+require 'models/facturaModel.php';
 
 
 #vistas

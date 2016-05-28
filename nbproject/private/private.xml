@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/inventarioPHP/controllers/empleadoController.php</file>
-            <file>file:/var/www/html/inventarioPHP/statics/js/empleadoAjax.js</file>
-            <file>file:/var/www/html/inventarioPHP/models/empleadoModel.php</file>
+            <file>file:/var/www/html/inventarioPHP/statics/js/utilAjax.js</file>
+            <file>file:/var/www/html/inventarioPHP/models/facturaModel.php</file>
+            <file>file:/var/www/html/inventarioPHP/views/sideBarView.php</file>
+            <file>file:/var/www/html/inventarioPHP/views/productoView.php</file>
+            <file>file:/var/www/html/inventarioPHP/controllers/facturaController.php</file>
+            <file>file:/var/www/html/inventarioPHP/statics/js/facturaAjax.js</file>
         </group>
     </open-files>
 </project-private>

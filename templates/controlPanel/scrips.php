@@ -3,8 +3,8 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="statics/dist/bootstrap/js/bootstrap.min.js"></script>
 <!--
-<script src="statics/dist/bootstrap-select/js/bootstrap-select.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+<script src="statics/dist/bootstrap-select/js/bootstrap-select.min.js"></script>
 -->
 <script src="statics/js/generales.js"></script>
 <script src="statics/js/utilAjax.js"></script>

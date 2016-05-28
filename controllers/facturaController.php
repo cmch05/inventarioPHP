@@ -6,16 +6,16 @@ if (isset($_GET['func'])) {
 
         case 'viewNuevaFactura':
             $view = new FacturaView();
-            //$ciudad = $view->vistaSelects('ciudad');
+            $ciudad = $view->vistaSelects('producto');
 
-            $boton = ['crear', 'crearActualizarMarca()'];
-            $titulo = 'Crear una Nueva Marca';
-            //$selects = $ciudad;
-            //$selects .= '';
+            $boton = ['crear', 'agregarProducto()'];
+            $titulo = 'Producto';
+            $selects = $ciudad;
+            $selects .= '';
 
             $campos = $view->viewNuevaFactura();
             
-            echo require(TEMPLATES . 'controlPanel/components/forms/formProducto.php');
+            echo require(TEMPLATES . 'controlPanel/components/forms/formFactura.php');
             break;
         
         
@@ -60,10 +60,12 @@ if (isset($_GET['func'])) {
 } elseif (isset($_GET['mode'])) {
     switch ($_GET['mode']) {
 
-        case 'crearActualizarMarca':
+        case 'precioProducto':
 
-            $res = new ProductoView();
-            echo $res->crearMarca();
+            $model = new FacturaModel();
+            $res= $model->precioVenta($_POST['id']);           
+            echo $model->recorrer($res)[0];
+            $model->close();
 
             break;
         case 'viewActualizarMarca':

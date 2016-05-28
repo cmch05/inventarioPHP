@@ -40,6 +40,7 @@ if ($_POST) {
                 //require('core/bin/ajax/goreg.php');
                 break;
             case 'factura':
+                require CONTROLLER.'facturaController.php';
                 //echo 'llego al login';
                // require('core/bin/ajax/goLostPass.php');
                 break;
