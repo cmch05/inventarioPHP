@@ -1,9 +1,12 @@
+h2 .btn{display: inline-block}
+
+
 .full-view{
     height: 100%; 
 }
 
 @media print{
-      #sidebar-wrapper,#accion,#update,#delete, #unEmpleado ,.btn, #actualizar, #eliminar{
+      #sidebar-wrapper,#accion,#update,#delete, #unEmpleado ,.btn, #actualizar, #eliminar, #itemSelect{
             
             display: none !important;
         }

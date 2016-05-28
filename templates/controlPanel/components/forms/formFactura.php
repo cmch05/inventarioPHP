@@ -16,7 +16,12 @@
                     echo '<label for="' . $campos[$i][1] . '" >';
                     echo $campos[$i][0] . ' </label>';
 
-                    echo ' <input type="' . $campos[$i][2] . '" class="form-control"id="' . $campos[$i][1];
+                    if ($campos[$i][1] == 'txtPrecio') {
+
+                        echo ' <input readonly type="' . $campos[$i][2] . '" class="form-control"id="' . $campos[$i][1];
+                    } else {
+                        echo ' <input type="' . $campos[$i][2] . '" class="form-control"id="' . $campos[$i][1];
+                    }
                     echo isset($valores) ? '" value="' . $valores[$i] . '"' : '';
                     echo '"   /> </div>';
                 }
@@ -41,33 +46,27 @@
             ?> >Agregar Item</button>                       
         </form>    
     </div>
-    <div class="col-md-8" id="tableItems">    
-            <h2 class="">Factura</h2>
-   
-        <table class="table table-hover  table-condensed">
+    <div class="col-md-8" >    
+        <h2 class=""> 
+            <button type="button" class="btn btn-danger " onclick="guardarFactura()">Guardar Factura</button>
+            Factura:
+            <span id="precioTotal"></span>
+
+
+
+
+        </h2>
+
+        <table class="table table-hover  table-condensed" id="tableItems">
             <thead><tr>
                     <th>Producto</th>
                     <th>Cantidad</th>
                     <th>Precio</th>
                     <th  id="accion">Acción</th>
-
                 </tr></thead>
-            <tbody id="tbody">
-                <tr>
-                    <td> contenido</td>
-                    <td>contenido dos</td>
-                    <td>contenido tes</td>
-                </tr>
-
-            </tbody>
+            <tbody id="tbody"></tbody><!-- no se puede dejar espacio aca poque cuenta como un child -->
         </table>
     </div>
-
-
-
-
-
-
 
 
 </div>

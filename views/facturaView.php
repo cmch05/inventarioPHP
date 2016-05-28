@@ -9,6 +9,7 @@ class FacturaView {
 
         $campos = array(
             array('Cantidad', 'txtCantidad', 'number'),
+            array('Precio', 'txtPrecio', 'number'),
             
         );
         return $campos;
@@ -19,11 +20,13 @@ class FacturaView {
         $db = new FacturaModel();
         $sql = '';
         $res = '';
+        $onchange='';
         switch ($modelo) {
             case 'producto' :
                 $sql = $db->producto();
-                $id = 'producto';
+                $id = 'cboProducto';
                 $titulo = 'Seleccione un producto';
+                $onchange ='onchange="precioProducto(value)"';
                 break;
             case 'departamento' :
                 $sql = $db->cidudad();
@@ -38,8 +41,8 @@ class FacturaView {
         }
         $res .= '<div class="form-group">';
         $res .= '<label for="' . $id . '">' . $titulo . '</label>';
-        $res .= '<select class="form-control" id="' . $id . '">';
-
+        $res .= '<select class="form-control" id="' . $id . '" ' . $onchange . '>';
+        $res .= '  <option value="" disabled selected hidden>Seleccione un Producto</option>';
         while ($row = $db->recorrer($sql)) {
             if ($idSelected != '' && $idSelected == $row['value']) {
                 $res .= "<option value=" . $row['value'] . " selected>" . strtoupper($row['content']) . "</option>";
@@ -71,7 +74,7 @@ class FacturaView {
                 $sql = $db->verProducto();
                 $tituloAccion = '<td colspan="2" id="accion">Acción</td> ';
                 $accion = '<td id="actualizar"><a href="#" onclick="viewActualizarProducto(this)" >Actualizar</a></td>';
-                $accion .= '<td id="eliminar"><a href="#" onclick="" >Eliminar</a></td>';
+                $accion .= '<td id="eliminar"><a href="#" onclick="eliminarProductoLista(this)" >Eliminar</a></td>';
                 break;
             case 'verMarcas':
                 $sql = $db->verMarca();

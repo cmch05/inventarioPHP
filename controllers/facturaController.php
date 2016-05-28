@@ -68,6 +68,22 @@ if (isset($_GET['func'])) {
             $model->close();
 
             break;
+        case 'guardarFactura':
+            //$JSON = file_get_contents('php://input');
+            $model = new FacturaModel();
+            $res= $model->guardarFactura($_POST['JSON']);           
+            
+            if($res){
+                echo 1;
+            }
+            else{
+                echo 0;
+            }       
+            
+//            echo $model->recorrer($res)[0];
+            $model->close();
+
+            break;
         case 'viewActualizarMarca':
             $view = new ProductoView();
             $unaCiudad= $view->unaCiudad($_POST['id']);
